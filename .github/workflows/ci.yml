@@ -1,6 +1,8 @@
-name: test
-
-on: [push]
+name: CI
+on:
+  push:
+    branches: 
+      - main
 
 jobs:
   build:
