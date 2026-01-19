@@ -33,3 +33,10 @@ git status
 
 # Installation de jest, supertest et eslint@8 en mode développeur
 npm install --save-dev jest supertest eslint@8
+
+# Etape 3 : Création de l'arborescence
+### Ajout des dossiers src, test et .github/workflows
+
+# Création du fichier routes.js dans src
+
+# Création du fichier app.js dans src
