@@ -31,3 +31,5 @@ node_modules/
 git status
 ## Seuls .gitignore et package-lock.json apparaissent et le dossier node_modules et son contenu sont ignorés
 
+# Installation de jest, supertest et eslint@8 en mode développeur
+npm install --save-dev jest supertest eslint@8
