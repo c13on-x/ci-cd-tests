@@ -1,0 +1,12 @@
+{
+  "name": "ci-cd-tests",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "cd13on-x",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
