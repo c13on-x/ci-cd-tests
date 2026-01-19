@@ -40,3 +40,25 @@ npm install --save-dev jest supertest eslint@8
 # Création du fichier routes.js dans src
 
 # Création du fichier app.js dans src
+
+# Test de l'app
+node src/app.js
+## Fonctionne sur le port 3000 de localhost
+localhost:3000/time
+
+# Création d'un fichier health.test.js dans test 
+
+# Ajout d'un fichier .eslintrc.json à la racine
+
+# Modification du fichier package.json (scripts)
+  "scripts": {
+    "start": "node src/app.js",
+    "lint": "eslint src test",
+    "test": "jest"
+  },
+
+# Lancement d'un test
+npm run test
+
+# Test de lint
+npm run lint
