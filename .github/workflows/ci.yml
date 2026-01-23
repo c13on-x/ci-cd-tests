@@ -29,8 +29,10 @@ jobs:
     name: Deploy to Render
     runs-on: ubuntu-latest
     steps:
-        uses: ttskch/render-deploy@v1.0.0
+      - name: Create deployment
+        uses: sws2apps/render-deployment@main
         with:
           serviceId: srv-d5piacshg0os739j92k0
           apiKey: rnd_8fFnBKfWkISCYIwFiqCJYaiXkHbP
+
   
