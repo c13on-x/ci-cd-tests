@@ -36,5 +36,3 @@ jobs:
         with:
           apiKey: ${{ secrets.RENDER_API_KEY }}
           serviceId: ${{ secrets.RENDER_SERVICE_ID }}
-
-  
