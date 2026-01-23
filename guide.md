@@ -62,3 +62,10 @@ npm run test
 
 # Test de lint
 npm run lint
+
+# Recap codes d'erreur
+100 info 
+200 success
+300 redirection
+400 erreur client
+500 erreur serveur

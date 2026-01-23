@@ -1,19 +1,41 @@
-name: CI
+name: CI/CD
+
 on:
   push:
-    branches: 
-      - main
+    branches: [main]
 
 jobs:
   build:
+    # On utilise l'Ubuntu latest pour la build
+    runs-on: ubuntu-latest
+
+    steps:
+      # On récupère le code via le git
+      - uses: actions/checkout@v3
+      # On utilise/install Node.js 20.x
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+          cache: 'npm'
+      # On installe les dépendances (ci = clean install)
+      - run: npm ci
+      # On lance le linter (verif syntaxe)
+      - run: npm run lint
+      # On lance les tests
+      - run: npm test
+
+  deploy:
+    name: Deploy to Render
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
-      - name: Use Node.js 
-        uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@main #consider using pin for dependabot auto update
+
+      - name: Create deployment
+        uses: sws2apps/render-deployment@main #consider using pin for dependabot auto update
         with:
-          node-version: '24.x'
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run test
+          serviceId: srv-d5piacshg0os739j92k0
+          apiKey: rnd_8fFnBKfWkISCYIwFiqCJYaiXkHbP
+
+  
