@@ -2,7 +2,9 @@ name: CI/CD
 
 on:
   push:
-    branches: [main]
+    # branches: [main]
+    tags:
+      - 'dev-*'
 
 jobs:
   build:
@@ -32,8 +34,6 @@ jobs:
       - name: Create deployment
         uses: sws2apps/render-deployment@main
         with:
-          # serviceId: srv-d5piacshg0os739j92k0
-          # apiKey: rnd_8fFnBKfWkISCYIwFiqCJYaiXkHbP
           apiKey: ${{ secrets.RENDER_API_KEY }}
           serviceId: ${{ secrets.RENDER_SERVICE_ID }}
 
